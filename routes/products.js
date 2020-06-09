@@ -16,8 +16,14 @@ router.get('/:id_product', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+
+    const product = {
+        name: req.body.name,
+        price: req.body.price
+    }
     res.status(201).send({
-        message: 'POST'
+        message: 'POST',
+        productCreated: product
     });
 });
 
